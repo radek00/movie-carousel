@@ -12,3 +12,23 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.carousel {
+  &--list{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 1rem;
+    width: 500px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    position: relative;
+  }
+  &--wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+}
