@@ -64,6 +64,25 @@
     opacity: 0;
     visibility: hidden;
     //display: none;
+    .movie-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+      
+      h3 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+      
+      p {
+        margin: 5px 0 0;
+        font-size: 0.9rem;
+      }
+    }
   }
 
   &:hover {
