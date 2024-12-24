@@ -21,7 +21,7 @@
     align-items: center;
     gap: 1rem;
     width: 500px;
-    overflow-x: hidden;
+    overflow: hidden;
     white-space: nowrap;
     position: relative;
   }
@@ -31,4 +31,115 @@
     align-items: center;
     gap: 4rem;
   }
+  &--item {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    transition: width 0.3s ease;
+    position: relative;
+    width: 200px;
+    height: 150px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid #fff;
+  
+    .main-image {
+      transition: opacity 0.3s ease;
+      // opacity: 1;
+      // display: block;
+    }
+  
+    .expanded-image {
+      transition: opacity 0.2s ease;
+      // transition-delay: .1s;
+      // opacity: 0;
+      // display: none;
+    }
+  
+    &:hover {
+      width: 300px;
+      height: 150px;
+      z-index: 1;
+  
+      // .main-image {
+      //   opacity: 0;
+      //   //display: none;
+      // }
+  
+      // .expanded-image {
+      //   opacity: 1;
+      //   display: block;
+      // }
+
+      img {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+
+
+
+
+  // &--item {
+  //   transition: all 0.3s ease;
+  //   position: relative;
+  //   width: 200px;
+  //   height: 150px;
+  //   //min-width: 200px;
+  //   flex-shrink: 0;
+
+  //   img {
+  //     object-fit: cover;
+  //     width: 100%;
+  //     height: 100%;
+  //   }
+
+  //   // .cover {
+  //   //   opacity: 1;
+  //   //   display: block;
+  //   // }
+
+  //   // img:nth-of-type(2) {
+  //   //   display: none;
+  //   // }
+
+  //   p {
+  //     width: 100%;
+  //     text-align: center;
+  //   }
+
+  //   &:hover {
+  //     //transform: scale(1.2);
+  //     z-index: 1;
+  //     transform: width;
+  //     width: 300px;
+
+  //     .cover {
+  //       opacity: 0;
+  //       display: none;
+  //     }
+      
+  //     // & ~ .carousel--item {
+  //     //   transform: translateX(100px); // Push items right
+  //     // }
+      
+  //     // &:not(:first-child) {
+  //     //   // Pull previous items left when not first item
+  //     //   .carousel--item:not(:hover) {
+  //     //     transform: translateX(-50px);
+  //     //   }
+  //     // }
+
+  //     // img:nth-of-type(2) {
+  //     //   display: block;
+  //     // }
+  //     // img:nth-of-type(1) {
+  //     //   display: none;
+  //     // }
+  //   }
+  // }
 }
