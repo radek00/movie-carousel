@@ -53,42 +53,32 @@ function move(direction: Direction) {
 //   );
 // })  
 
-document.querySelectorAll('.carousel--item').forEach(element => {
-  // Handle hover on the item itself
-  const mainImage = element.querySelector('.main-image') as HTMLElement;
-  let isExpanded = false;
-  element.addEventListener('transitionend', (e) => {
-    console.log('transitionend', e);
-    if (e.propertyName === 'width' && mainImage) {
-      isExpanded = !isExpanded;
-      mainImage.style.display = isExpanded ? 'none' : 'block';
-    }
-  });
-  element.addEventListener('mouseenter', () => {
-    const expandedImage = element.querySelector('.expanded-image') as HTMLElement;
-    
-    if (mainImage) {
-      mainImage.style.opacity = '0';
-    }
-    if (expandedImage) {
-      expandedImage.style.opacity = '1';
-      //expandedImage.style.visibility = 'visible';
-    }
-  });
+// document.querySelectorAll('.carousel--item').forEach(element => {
+//   const mainImage = element.querySelector('.main-image') as HTMLElement;
+//   const expandedImage = element.querySelector('.expanded-image') as HTMLElement;
 
-  element.addEventListener('mouseleave', () => {
-    const mainImage = element.querySelector('.main-image') as HTMLElement;
-    const expandedImage = element.querySelector('.expanded-image') as HTMLElement;
-    
-    if (mainImage) {
-      mainImage.style.display = 'block';
-      mainImage.style.opacity = '1';
-    }
-    if (expandedImage) {
-      expandedImage.style.opacity = '0';
-    }
-  });
-});
+//   let isExpanded = false;
+//   element.addEventListener('transitionend', (e) => {
+//     if (e.propertyName === 'width' && mainImage instanceof HTMLElement) {
+//       isExpanded = !isExpanded;
+//       mainImage.style.display = isExpanded ? 'none' : 'block';
+//     }
+//   });
+//   // element.addEventListener('mouseenter', () => {
+//   //   mainImage.style.opacity = '0';
+//   //   mainImage.style.transform = 'scale(1.2)';
+//   //   expandedImage.style.opacity = '1';
+//   //   expandedImage.style.display = 'block';
+//   //   expandedImage.style.visibility = 'visible';
+//   // });
+
+//   // element.addEventListener('mouseleave', () => {
+//   //   mainImage.style.opacity = '1';
+//   //   mainImage.style.transform = 'scale(1)';
+//   //   expandedImage.style.opacity = '0';
+//   //   expandedImage.style.visibility = 'hidden';
+//   // });
+// });
 
 btnRight.addEventListener('click', () => move(Direction.Right));
 btnLeft.addEventListener('click', () => move(Direction.Left));
