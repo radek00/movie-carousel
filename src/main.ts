@@ -5,10 +5,23 @@ enum Direction {
   Left
 }
 
+const visibleAtOnce = 4;
+const gapRem = 1; // Gap in rem units
+const gapPx = gapRem * 16; // Convert rem to px
+
 const btnLeft = document.getElementById('btn-left') as HTMLElement;
 const btnRight = document.getElementById('btn-right') as HTMLElement;
 
 const carousel = document.querySelector('.carousel .carousel--list') as HTMLElement;
+const items = document.querySelectorAll('.carousel--item');
+
+carousel.style.gap = gapRem + 'rem';
+
+const singleItemWidth = items[0].clientWidth;
+const visibleWidth = (singleItemWidth * visibleAtOnce) + (gapPx * visibleAtOnce);
+const totalWidth = `${visibleWidth}px`;
+
+carousel.style.width = totalWidth;
 
 function move(direction: Direction) {
   console.log('moveRight');
