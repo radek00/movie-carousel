@@ -51,9 +51,19 @@ items.forEach((item, idx) => {
 });
 
 function move(direction: Direction) {
-  console.log('moveRight');
   const itemWidth = carousel.clientWidth || 0;
-  const gap = 16; // 1rem = 16px
+  const gap = 16;
+  const minScroll = singleItemWidth + gapPx;
+  
+  // Check if scrolling left would show placeholder
+  if (direction === Direction.Left && 
+      carousel.scrollLeft - (itemWidth + gap) < minScroll) {
+    carousel.scrollTo({
+      left: minScroll,
+      behavior: 'smooth'
+    });
+    return;
+  }
 
   carousel.scrollBy({
     left: direction === Direction.Right ? itemWidth + gap : -(itemWidth + gap),
