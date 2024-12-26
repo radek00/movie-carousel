@@ -30,12 +30,7 @@ carousel.style.width = totalWidth;
 // setTimeout(() => {
 
 // }, 300);
-carousel.scrollBy({
-  left: singleItemWidth + gapPx,
-  behavior: 'instant'
-});
-
-
+move(Direction.Left);
 itemPlaceHolder.style.display = 'block';
 
 items.forEach((item, idx) => {
