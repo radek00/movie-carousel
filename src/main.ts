@@ -27,10 +27,14 @@ itemPlaceHolder.style.marginRight = `-${gapPx}px`;
 
 carousel.style.width = totalWidth;
 
+// setTimeout(() => {
+
+// }, 300);
 carousel.scrollBy({
   left: singleItemWidth + gapPx,
   behavior: 'instant'
 });
+
 
 itemPlaceHolder.style.display = 'block';
 
