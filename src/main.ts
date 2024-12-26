@@ -6,8 +6,8 @@ enum Direction {
 }
 
 const visibleAtOnce = 4;
-const gapRem = 1; // Gap in rem units
-const gapPx = gapRem * 16; // Convert rem to px
+const gapRem = 1;
+const gapPx = gapRem * 16;
 
 const btnLeft = document.getElementById('btn-left') as HTMLElement;
 const btnRight = document.getElementById('btn-right') as HTMLElement;
@@ -27,17 +27,16 @@ itemPlaceHolder.style.marginRight = `-${gapPx}px`;
 
 carousel.style.width = totalWidth;
 
-setTimeout(() => {
-  carousel.scrollBy({
-    left: singleItemWidth + gapPx,
-    behavior: 'instant'
-  });
-},300)
+carousel.scrollBy({
+  left: singleItemWidth + gapPx,
+  behavior: 'instant'
+});
+
+itemPlaceHolder.style.display = 'block';
 
 items.forEach((item, idx) => {
   const isLastInView = (idx + 1) % visibleAtOnce === 0;
   item.addEventListener('mouseenter', () => {
-
     if (isLastInView) {
       itemPlaceHolder.style.width = '0px'
     }
